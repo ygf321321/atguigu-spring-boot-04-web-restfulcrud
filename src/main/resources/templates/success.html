@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--语法提示-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>成功！</h1>
+<!--th:text 将div中文本内容-->
+<div id="div01" class="mydiv" th:class="tdiv" th:text="${hello}">欢迎页面</div>
+表达式语法
+<div th:text="${hello}"></div>
+<div th:utext="${hello}"></div>
+<br>
+
+<!--th:each 每次遍历都会生成当前标签-->
+<!--3个h4-->
+<h4 th:text="${useritem}" th:each="useritem:${users}"></h4>
+
+<h4>
+    <span th:each="useritem:${users}">[[${useritem}]]  </span>
+</h4>
+
+
+<div th:text="${user.id} ">id</div>
+<div th:text="${user.getName()} ">name</div>
+
+<!--<div th:text="${#ctx}"></div>-->
+<div th:text="${#session}"></div>
+</body>
+</html>
